@@ -1,0 +1,472 @@
+@-webkit-keyframes fade
+{
+    /* Show a leaf while into or below 95 percent of the animation and hide it, otherwise */
+    0%   { opacity: 1; }
+    45%  { opacity: 1; }
+    48%  { opacity: 1; }
+    50%  { opacity: .8; }
+    51%  { opacity: .5; }
+    52%  { opacity: .2; }
+    70%  { opacity: 0; }
+    75%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+@-webkit-keyframes drop
+{
+    /* Move a leaf to -300 pixels in the y-axis at the start of the animation */
+    0%   { -webkit-transform: translate(0px, 0px) rotate(0deg); }
+    30%   { -webkit-transform: translate(0px, 725px) rotate(-1deg); }
+    /* Move a leaf to 600 pixels in the y-axis at the end of the animation */
+    100% { -webkit-transform: translate(0px, 1050px) rotate(-90deg); }
+}
+
+@-webkit-keyframes clockwiseSpin
+{
+    /* Rotate a leaf by -50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: rotate(-50deg); }
+    /*  Rotate a leaf by 50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: rotate(50deg); }
+}
+
+@-webkit-keyframes counterclockwiseSpinAndFlip 
+{
+    /* Flip a leaf and rotate it by 50 degrees in 2D space at the start of the animation */
+    0%   { -webkit-transform: rotate(0deg); }
+    /* Flip a leaf and rotate it by -50 degrees in 2D space at the end of the animation */
+    100% { -webkit-transform: rotate(-95deg); }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Arima Madurai", cursive;
+  color: black;
+  font-size: 4rem;
+  letter-spacing: -3px;
+  text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.6);
+  position: relative;
+  z-index: 3;
+}
+
+.container {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 35rem;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  background-position: center center;
+  padding: 2rem;
+}
+
+.bird-left {
+  transform: scale(-1,1);
+  background-image: url(../img/bird-cells-fly-right.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  -webkit-animation-name: fly-cycle;
+          animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.bird-right {
+  background-image: url(../img/bird-cells-fly-right.svg);
+  background-size: auto 100%;
+  width: 88px;
+  height: 125px;
+  will-change: background-position;
+  -webkit-animation-name: fly-cycle;
+          animation-name: fly-cycle;
+  -webkit-animation-timing-function: steps(10);
+          animation-timing-function: steps(10);
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+.bird--one {
+  transform: scale(1.6);
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.bird--two {
+  -webkit-animation-duration: 0.9s;
+          animation-duration: 0.9s;
+  -webkit-animation-delay: -1.5s;
+          animation-delay: -1.5s;
+}
+.bird--three {
+  -webkit-animation-duration: 1.25s;
+          animation-duration: 1.25s;
+  -webkit-animation-delay: -0.25s;
+          animation-delay: -0.25s;
+}
+.bird--four {
+  -webkit-animation-duration: 1.1s;
+          animation-duration: 1.1s;
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+.bird-container-left {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  -webkit-animation-name: fly-left-one;
+          animation-name: fly-left-one;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 8;
+          animation-iteration-count: 8;
+}
+.bird-container-right {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  transform: scale(0) translateX(-10vw);
+  will-change: transform;
+  -webkit-animation-name: fly-right-one;
+          animation-name: fly-right-one;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: 8;
+          animation-iteration-count: 8;
+}
+.bird-container--one {
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+.bird-container--two {
+  -webkit-animation-duration: 11s;
+          animation-duration: 11s;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.bird-container--three {
+  -webkit-animation-duration: 14.6s;
+          animation-duration: 14.6s;
+  -webkit-animation-delay: 9.5s;
+          animation-delay: 9.5s;
+}
+.bird-container--four {
+  -webkit-animation-duration: 16s;
+          animation-duration: 16s;
+  -webkit-animation-delay: 10.25s;
+          animation-delay: 10.25s;
+}
+
+@-webkit-keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+
+@keyframes fly-cycle {
+  100% {
+    background-position: -900px 0;
+  }
+}
+@-webkit-keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@keyframes fly-right-one {
+  0% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+  10% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  30% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  60% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+}
+@-webkit-keyframes fly-left-one {
+  0% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  10% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  20% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  60% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  100% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+}
+@keyframes fly-left-one {
+  0% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  10% {
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
+  }
+  20% {
+    transform: translateY(0vh) translateX(90vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(2vh) translateX(70vw) scale(0.6);
+  }
+  40% {
+    transform: translateY(4vh) translateX(50vw) scale(0.6);
+  }
+  50% {
+    transform: translateY(0vh) translateX(30vw) scale(0.5);
+  }
+  60% {
+    transform: translateY(2vh) translateX(10vw) scale(0.4);
+  }
+  100% {
+    transform: scale(0.3) translateX(-10vw);
+  }
+}
+@-webkit-keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+@keyframes fly-right-two {
+  0% {
+    transform: translateY(-2vh) translateX(-10vw) scale(0.5);
+  }
+  10% {
+    transform: translateY(0vh) translateX(10vw) scale(0.4);
+  }
+  20% {
+    transform: translateY(-4vh) translateX(30vw) scale(0.6);
+  }
+  30% {
+    transform: translateY(1vh) translateX(50vw) scale(0.45);
+  }
+  40% {
+    transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
+  }
+  50% {
+    transform: translateY(0vh) translateX(90vw) scale(0.45);
+  }
+  51% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+  100% {
+    transform: translateY(0vh) translateX(110vw) scale(0.45);
+  }
+}
+
+:root {
+  --base: #bf9b30;
+  --base-light: #7873A7;
+  --base-dark: #555184;
+  --shadow: #4F4C6B;
+  --letter: #b2041a;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* min-height: 100vh; */
+  padding: 165px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  position: relative;
+  perspective: 600px;
+}
+
+.shadow {
+  position: absolute;
+  bottom: -188px;
+  width: 350px;
+  height: 1px;
+  background: transparent;
+  border-radius: 30%;
+  box-shadow: 50px 100px 10px 5px #eeeef3;
+}
+
+.letter {
+  position: absolute;
+  top: 100px;
+  /* left: 10px; */
+  width: 100%;
+  height: 888px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 15;
+  border-radius: 2px;
+  background: var(--letter);
+  /* box-shadow: 0px 1px 7px -2px var(--base); */
+  background: url(../img/invitation-sangjit-modern.png);
+  background-size: 318px 888px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.letter .body {
+  position: relative;
+  width: 318px;
+  height: 888px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--base);
+  background: url(../img/invitation-sangjit-modern.png);
+  background-size: 318px 888px;
+}
+.letter .body .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  font-family: "Manjari", sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.letter .body .message {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+}
+
+.envelope {
+  position: relative;
+  top: 88px;
+  width: 473px;
+  height: 910px;
+  background: linear-gradient(#cccbd7 0.5px, var(--base-light) 0.5px);
+  cursor: pointer;
+}
+.envelope.animate {
+	animation-name: fade, drop;
+    animation-duration: 2.5s, 2s;
+    animation-delay: .5s, .8s;
+	animation-iteration-count: 1;
+	z-index: 999;
+	animation-fill-mode: forwards;
+}
+.envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 473px;
+  border-top: 115px solid transparent;
+  border-left: 190px solid transparent;
+  border-right: 190px solid transparent;
+  box-sizing: border-box;
+  z-index: 30;
+  transform-origin: top;
+  background-position: center;
+}
+
+.envelope::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 473px;
+  height: 910px;
+  z-index: 25;
+  background: linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 150px 90px/150px 90px no-repeat, linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/152px 90px no-repeat, linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 90px/151px 90px no-repeat, linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 150px 0px/150px 90px no-repeat;
+  background: url(../img/wedding-invitation-open-flap-front-HD.gif);
+  background-repeat: no-repeat;
+  background-size: 473px 910px;
+}
+
+/*# sourceMappingURL=my.css.map */

@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ $1.html
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+</IfModule>
