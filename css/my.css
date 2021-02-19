@@ -57,7 +57,7 @@ h1 {
 .container {
   z-index: 1;
   position: relative;
-  overflow: hidden;
+  /* overflow: revert; */
   display: flex;
   align-items: center;
   justify-content: center;

@@ -55,7 +55,13 @@ const div = document.createElement('div');
   document.getElementsByClassName('container')[0].appendChild(div);
 }
 
+function playSongs()
+{
+	document.getElementById("my_audio").play();
+}
+
 function openCard(e) {
+  playSongs();
   t1.play();
   addBird();
   document.getElementsByClassName('envelope')[0].className += " animate";
