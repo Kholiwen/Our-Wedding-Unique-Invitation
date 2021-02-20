@@ -6,9 +6,9 @@
     48%  { opacity: 1; }
     50%  { opacity: .8; }
     51%  { opacity: .5; }
-    52%  { opacity: .2; }
-    70%  { opacity: 0; }
-    75%  { opacity: 0; }
+    52%  { opacity: .3; }
+    70%  { opacity: .2; }
+    75%  { opacity: .1; }
     100% { opacity: 0; }
 }
 
@@ -16,8 +16,10 @@
 {
     /* Move a leaf to -300 pixels in the y-axis at the start of the animation */
     0%   { -webkit-transform: translate(0px, 0px) rotate(0deg); }
-    30%   { -webkit-transform: translate(0px, 725px) rotate(-1deg); }
+    30%   { -webkit-transform: translate(0px, 525px) rotate(-5deg); }
     /* Move a leaf to 600 pixels in the y-axis at the end of the animation */
+    45% { -webkit-transform: translate(0px, 1000px) rotate(-85deg); }
+    95% { -webkit-transform: translate(888px, 1050px) rotate(-88deg); }
     100% { -webkit-transform: translate(0px, 1050px) rotate(-90deg); }
 }
 
@@ -57,7 +59,7 @@ h1 {
 .container {
   z-index: 1;
   position: relative;
-  /* overflow: revert; */
+  overflow: revert;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -206,7 +208,7 @@ h1 {
     transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
   100% {
-    transform: translateY(0vh) translateX(110vw) scale(0.6);
+    transform: translateY(0vh) translateX(105vw) scale(0.6);
   }
 }
 @keyframes fly-right-one {
@@ -232,7 +234,7 @@ h1 {
     transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
   100% {
-    transform: translateY(0vh) translateX(110vw) scale(0.6);
+    transform: translateY(0vh) translateX(105vw) scale(0.6);
   }
 }
 @-webkit-keyframes fly-left-one {
@@ -394,8 +396,14 @@ h1 {
   background-size: 318px 888px;
   background-repeat: no-repeat;
   background-position: center;
+	-webkit-transition: opacity 2.0s ease-in;
+	-moz-transition: opacity 2.0s ease-in;
+	-o-transition: opacity 3.0s ease-in;
+	transition: opacity 3.0s ease-in;
+  opacity: 1;
 }
 .letter .body {
+	opacity: 1;	
   position: relative;
   width: 318px;
   height: 888px;
@@ -424,6 +432,9 @@ h1 {
   text-align: center;
   font-family: "Great Vibes", cursive;
 }
+.letter.hide {
+	opacity: 0;
+}
 
 .envelope {
   position: relative;
@@ -435,8 +446,8 @@ h1 {
 }
 .envelope.animate {
 	animation-name: fade, drop;
-    animation-duration: 2.5s, 2s;
-    animation-delay: .5s, .8s;
+    animation-duration: 2.8s, 2.7s;
+    animation-delay: .5s, 1.1s;
 	animation-iteration-count: 1;
 	z-index: 999;
 	animation-fill-mode: forwards;
@@ -469,4 +480,17 @@ h1 {
   background-size: 473px 910px;
 }
 
+#livestream {
+	position: absolute;
+	display: none;
+	margin: 0 auto;
+	opacity: 0;
+}
+
+#livestream.show {
+	-webkit-transition: opacity 8.0s ease-in;
+	-moz-transition: opacity 8.0s ease-in;
+	-o-transition: opacity 8.0s ease-in;
+	transition: opacity 8.0s ease-in;
+}
 /*# sourceMappingURL=my.css.map */
