@@ -71,7 +71,7 @@ function openCard(e) {
   hideAddressBar();
   setTimeout(function () { addBird(); }, 1188);
   setTimeout(function () { document.getElementsByClassName('shadow')[0].style.width = "622px" }, 3888);
-  setTimeout(function () { document.getElementById('livestream').style.display = 'block'; }, 199888);
+  setTimeout(function () { hideLetterAndShowStream(); }, 188000);
 }
 
 function closeCard(e) {

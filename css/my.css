@@ -208,7 +208,7 @@ h1 {
     transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
   100% {
-    transform: translateY(0vh) translateX(105vw) scale(0.6);
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
 }
 @keyframes fly-right-one {
@@ -234,7 +234,7 @@ h1 {
     transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
   100% {
-    transform: translateY(0vh) translateX(105vw) scale(0.6);
+    transform: translateY(0vh) translateX(110vw) scale(0.6);
   }
 }
 @-webkit-keyframes fly-left-one {
@@ -343,9 +343,9 @@ h1 {
 }
 
 :root {
-  --base: #bf9b30;
-  --base-light: #7873A7;
-  --base-dark: #555184;
+  --base: #ac061ce5;
+  --base-light: #ac0d22;
+  --base-dark: #9b0217;
   --shadow: #4F4C6B;
   --letter: #b2041a;
 }
@@ -475,7 +475,7 @@ h1 {
   height: 910px;
   z-index: 25;
   background: linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 150px 90px/150px 90px no-repeat, linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/152px 90px no-repeat, linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 90px/151px 90px no-repeat, linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 150px 0px/150px 90px no-repeat;
-  background: url(../img/wedding-invitation-open-flap-front-HD.gif);
+  background: url(../img/Envelope-sangjit.jpg);
   background-repeat: no-repeat;
   background-size: 473px 910px;
 }
