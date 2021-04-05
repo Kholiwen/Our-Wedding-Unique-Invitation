@@ -1,39 +1,52 @@
 <html>
+
 <head>
-<title>Our Unique Invitation - under development</title>
-<meta property="og:title" content="Unique Invitation by RR" data-rh="true">
-<meta property="og:description" content="Our unique invitation, currently under development" data-rh="true">
-<meta property="og:image" content="img/Our Logo.jpeg" data-rh="true">
-<meta name="theme-color" content="#9b0211" />
-<meta name="viewport" content="minimal-ui">
-<link href="css/my.css" rel="stylesheet">
-<link rel="icon" href="img/Our-Logo.png" type="image/x-icon">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/CSSRulePlugin.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&amp;display=swap">
+    <title>Our Unique Invitation - under development</title>
+    <meta property="og:title" content="Unique Invitation by RR" data-rh="true">
+    <meta property="og:description" content="Our unique invitation, currently under development" data-rh="true">
+    <meta property="og:image" content="img/Our Logo.jpeg" data-rh="true">
+    <meta name="theme-color" content="#9b0211" />
+    <meta name="viewport" content="minimal-ui">
+    <link href="css/my.css" rel="stylesheet">
+    <link rel="icon" href="img/Our-Logo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/CSSRulePlugin.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Varela+Round&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manjari:wght@700&amp;display=swap">
 </head>
+
 <body>
-<div class="container">
-  <div class="content">
-    <div class="envelope" onclick="openCard()"></div>
-    <div class="letter">
-      <div class="body" onclick="document.getElementById('livestream').classList.add('show'); document.getElementById('livestream').style.display = 'block'; setTimeout( function() { document.getElementById('livestream').style.opacity = 1; }, 500);">
-        <!-- <span class="close" onclick="event.stopPropagation(); closeCard()">x</span> -->
-        <!-- <div class="message">Rosita<br>&<br>Raymond</div> -->
-      </div>
+    <div class="container">
+        <div class="content">
+            <div class="envelope" onclick="openCard()"></div>
+            <div class="letter">
+                <div class="body" onclick="document.getElementById('livestream').classList.add('show'); document.getElementById('livestream').style.display = 'block'; setTimeout( function() { document.getElementById('livestream').style.opacity = 1; }, 500);">
+                    <!-- <span class="close" onclick="event.stopPropagation(); closeCard()">x</span> -->
+                    <!-- <div class="message">Rosita<br>&<br>Raymond</div> -->
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+        <div id="livestream">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/s66TaBu5KA8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
-    <div class="shadow"></div>
-  </div>
-  <div id="livestream">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/s66TaBu5KA8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
 </body>
 <footer style="position: absolute; bottom: -100px; left: 50%; transform: translate(-50%, -50%);">Made with &#10084; by Rosita & Raymond</footer>
 <audio id="my_audio" src="songs/I See the Light (From Tangled).mp3" loop="loop"></audio>
 <script src="js/my.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3PJP363WCD"></script>
 <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3PJP363WCD');
 </script>
+
 </html>
