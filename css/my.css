@@ -548,5 +548,35 @@ h1 {
     transition: opacity 8.0s ease-in;
 }
 
+.sticky-bar {
+    display: none;
+    opacity: 0;
+    transition: all;
+}
+
+.sticky-bar.show {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, .1);
+    width: 100%;
+    height: 33px;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "Manjari", sans-serif;
+    cursor: pointer;
+    -webkit-transition: opacity 0.8s ease-in;
+    -moz-transition: opacity 0.8s ease-in;
+    -o-transition: opacity 0.8s ease-in;
+    transition: opacity 0.8s ease-in;
+}
+
+.sticky-bar:hover {
+    background-color: rgba(0, 0, 0, .5);
+    -webkit-transition: all 0.8s ease-in;
+    -moz-transition: all 0.8s ease-in;
+    -o-transition: all 0.8s ease-in;
+    transition: all 0.8s ease-in;
+}
 
 /*# sourceMappingURL=my.css.map */

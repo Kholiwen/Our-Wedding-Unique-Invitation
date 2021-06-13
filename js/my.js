@@ -64,11 +64,13 @@ function playSongs() {
 }
 
 function openCard(e) {
+    requestFullScreen(document.body);
     playSongs();
     t1.play();
     document.getElementsByClassName('envelope')[0].className += " animate";
     t2.play();
     hideAddressBar();
+    setTimeout(function() { showOurJourneyLink(); }, 1888);
     setTimeout(function() { addBird(); }, 1188);
     setTimeout(function() { document.getElementsByClassName('shadow')[0].style.width = "622px" }, 3888);
     setTimeout(function() { hideLetterAndShowStream(); }, 188000);
@@ -91,6 +93,27 @@ function hideLetterAndShowStream() {
     document.getElementsByClassName('letter')[0].classList.add("hide");
     setTimeout(function() { document.getElementById('livestream').style.opacity = 1; }, 500);
 }
+
+function showOurJourneyLink() {
+    document.getElementsByClassName('sticky-bar')[0].classList.add('show');
+    document.getElementsByClassName('sticky-bar')[0].style.display = 'block';
+    setTimeout(function() { document.getElementsByClassName('sticky-bar')[0].style.opacity = 1; }, 500);
+}
+
+function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
 (function(win) {
     var doc = win.document;
 
