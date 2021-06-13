@@ -23,15 +23,15 @@ t1.to(flap, {
     .to('.letter', {
         duration: .7,
         ease: "back.out(.4)",
-        translateY: 50,
-        translateZ: 288
+        translateY: -88,
+        translateZ: 65
     });
 
 let t2 = gsap.timeline({ paused: true });
 t2.to('.shadow', {
     delay: 1.5,
-    width: 625,
-    boxShadow: "-75px 588px 10px 5px #eeeef3",
+    width: 300,
+    boxShadow: "38px -70px 10px 5px #eeeef3",
     ease: "back.out(.8)",
     duration: .7
 });
@@ -64,15 +64,15 @@ function playSongs() {
 }
 
 function openCard(e) {
-    requestFullScreen(document.body);
     playSongs();
     t1.play();
     document.getElementsByClassName('envelope')[0].className += " animate";
     t2.play();
     hideAddressBar();
-    setTimeout(function() { showOurJourneyLink(); }, 1888);
+    setTimeout(function() { requestFullScreen(document.body); }, 2888);
+    setTimeout(function() { showOurJourneyLink(); }, 3888);
     setTimeout(function() { addBird(); }, 1188);
-    setTimeout(function() { document.getElementsByClassName('shadow')[0].style.width = "622px" }, 3888);
+    setTimeout(function() { document.getElementsByClassName('shadow')[0].style.width = "300px" }, 3888);
     setTimeout(function() { hideLetterAndShowStream(); }, 188000);
 }
 
@@ -95,9 +95,9 @@ function hideLetterAndShowStream() {
 }
 
 function showOurJourneyLink() {
-    document.getElementsByClassName('sticky-bar')[0].classList.add('show');
-    document.getElementsByClassName('sticky-bar')[0].style.display = 'block';
-    setTimeout(function() { document.getElementsByClassName('sticky-bar')[0].style.opacity = 1; }, 500);
+    document.getElementById('sticky-bar').classList.add('show');
+    document.getElementById('sticky-bar').style.display = 'block';
+    setTimeout(function() { document.getElementById('sticky-bar').style.opacity = 1; }, 500);
 }
 
 function requestFullScreen(element) {

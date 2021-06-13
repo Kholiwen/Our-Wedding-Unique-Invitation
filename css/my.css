@@ -71,15 +71,7 @@
     }
 }
 
-@import url("https://fonts.googleapis.com/css?family=Arima+Madurai:300");
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 h1 {
-    font-family: "Arima Madurai", cursive;
     color: black;
     font-size: 4rem;
     letter-spacing: -3px;
@@ -189,8 +181,8 @@ h1 {
 }
 
 .bird-container--one {
-    -webkit-animation-duration: 15s;
-    animation-duration: 15s;
+    -webkit-animation-duration: 8s;
+    animation-duration: 8s;
     -webkit-animation-delay: 0;
     animation-delay: 0;
 }
@@ -229,26 +221,26 @@ h1 {
 }
 
 @-webkit-keyframes fly-right-one {
-    0% {
-        transform: scale(0.3) translateX(-10vw);
-    }
-    10% {
-        transform: translateY(2vh) translateX(10vw) scale(0.4);
-    }
-    20% {
-        transform: translateY(0vh) translateX(30vw) scale(0.5);
-    }
     30% {
-        transform: translateY(4vh) translateX(50vw) scale(0.6);
+        transform: scale(0.3) translateX(-50vw);
     }
     40% {
-        transform: translateY(2vh) translateX(70vw) scale(0.6);
+        transform: translateY(2vh) translateX(20vw) scale(0.4);
     }
     50% {
-        transform: translateY(0vh) translateX(90vw) scale(0.6);
+        transform: translateY(0vh) translateX(30vw) scale(0.5);
     }
     60% {
-        transform: translateY(0vh) translateX(110vw) scale(0.6);
+        transform: translateY(4vh) translateX(50vw) scale(0.6);
+    }
+    70% {
+        transform: translateY(2vh) translateX(70vw) scale(0.6);
+    }
+    80% {
+        transform: translateY(0vh) translateX(90vw) scale(0.6);
+    }
+    90% {
+        transform: translateY(0vh) translateX(100vw) scale(0.6);
     }
     100% {
         transform: translateY(0vh) translateX(110vw) scale(0.6);
@@ -256,26 +248,26 @@ h1 {
 }
 
 @keyframes fly-right-one {
-    0% {
-        transform: scale(0.3) translateX(-10vw);
-    }
-    10% {
-        transform: translateY(2vh) translateX(10vw) scale(0.4);
-    }
-    20% {
-        transform: translateY(0vh) translateX(30vw) scale(0.5);
-    }
     30% {
-        transform: translateY(4vh) translateX(50vw) scale(0.6);
+        transform: scale(0.3) translateX(-50vw);
     }
     40% {
-        transform: translateY(2vh) translateX(70vw) scale(0.6);
+        transform: translateY(2vh) translateX(20vw) scale(0.4);
     }
     50% {
-        transform: translateY(0vh) translateX(90vw) scale(0.6);
+        transform: translateY(0vh) translateX(30vw) scale(0.5);
     }
     60% {
-        transform: translateY(0vh) translateX(110vw) scale(0.6);
+        transform: translateY(4vh) translateX(50vw) scale(0.6);
+    }
+    70% {
+        transform: translateY(2vh) translateX(70vw) scale(0.6);
+    }
+    80% {
+        transform: translateY(0vh) translateX(90vw) scale(0.6);
+    }
+    90% {
+        transform: translateY(0vh) translateX(100vw) scale(0.6);
     }
     100% {
         transform: translateY(0vh) translateX(110vw) scale(0.6);
@@ -406,7 +398,7 @@ h1 {
 
 .container {
     /* min-height: 100vh; */
-    padding: 165px;
+    /* padding: 165px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -420,16 +412,16 @@ h1 {
 .shadow {
     position: absolute;
     bottom: -188px;
-    width: 350px;
+    width: 399px;
     height: 1px;
     background: transparent;
     border-radius: 30%;
-    box-shadow: 50px 100px 10px 5px #eeeef3;
+    box-shadow: -11px 15px 10px 5px #eeeef3;
 }
 
 .letter {
     position: absolute;
-    top: 100px;
+    top: 36px;
     /* left: 10px; */
     width: 100%;
     height: 888px;
@@ -441,7 +433,7 @@ h1 {
     background: var(--letter);
     /* box-shadow: 0px 1px 7px -2px var(--base); */
     background: url(../img/invitation-sangjit-modern.png);
-    background-size: 318px 888px;
+    background-size: 250px 697px;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-transition: opacity 2.0s ease-in;
@@ -454,14 +446,14 @@ h1 {
 .letter .body {
     opacity: 1;
     position: relative;
-    width: 318px;
-    height: 888px;
+    width: 250px;
+    height: 697px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--base);
     background: url(../img/invitation-sangjit-modern.png);
-    background-size: 318px 888px;
+    background-size: 250px 697px;
 }
 
 .letter .body .close {
@@ -490,9 +482,9 @@ h1 {
 
 .envelope {
     position: relative;
-    top: 88px;
-    width: 473px;
-    height: 910px;
+    top: 120px;
+    width: 375px;
+    height: 720px;
     background: linear-gradient(#cccbd7 0.5px, var(--base-light) 0.5px);
     cursor: pointer;
 }
@@ -511,7 +503,7 @@ h1 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 473px;
+    width: 375px;
     border-top: 115px solid transparent;
     border-left: 190px solid transparent;
     border-right: 190px solid transparent;
@@ -525,13 +517,13 @@ h1 {
     content: "";
     position: absolute;
     top: 0;
-    width: 473px;
-    height: 910px;
+    width: 375px;
+    height: 720px;
     z-index: 25;
     background: linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 150px 90px/150px 90px no-repeat, linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/152px 90px no-repeat, linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 90px/151px 90px no-repeat, linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 150px 0px/150px 90px no-repeat;
     background: url(../img/Envelope-sangjit.jpg);
     background-repeat: no-repeat;
-    background-size: 473px 910px;
+    background-size: 375px 720px;
 }
 
 #livestream {
@@ -548,19 +540,21 @@ h1 {
     transition: opacity 8.0s ease-in;
 }
 
-.sticky-bar {
+#sticky-bar {
     display: none;
     opacity: 0;
     transition: all;
 }
 
-.sticky-bar.show {
+#sticky-bar.show {
     position: absolute;
     top: 0;
+    z-index: 99;
+    background-color: black; /*fallback color*/
     background-color: rgba(0, 0, 0, .1);
     width: 100%;
-    height: 33px;
     padding: 8px;
+    color: var(--base-light);
     text-align: center;
     vertical-align: middle;
     font-family: "Manjari", sans-serif;
@@ -571,7 +565,8 @@ h1 {
     transition: opacity 0.8s ease-in;
 }
 
-.sticky-bar:hover {
+#sticky-bar:hover {
+    background-color: black; /*fallback color*/
     background-color: rgba(0, 0, 0, .5);
     -webkit-transition: all 0.8s ease-in;
     -moz-transition: all 0.8s ease-in;
