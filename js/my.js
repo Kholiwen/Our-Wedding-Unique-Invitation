@@ -2,11 +2,11 @@ let t1 = gsap.timeline({ paused: true });
 let flap = CSSRulePlugin.getRule(".envelope:before");
 
 t1.to(flap, {
-        duration: 0.5,
-        cssRule: {
-            rotateX: 180
-        }
-    })
+    duration: 0.5,
+    cssRule: {
+        rotateX: 180
+    }
+})
     .set(flap, {
         cssRule: {
             zIndex: 10
@@ -55,7 +55,7 @@ function addBird() {
     document.getElementsByClassName('container')[0].appendChild(div);
 }
 
-document.getElementsByClassName("letter")[0].addEventListener("click", function() {
+document.getElementsByClassName("letter")[0].addEventListener("click", function () {
     hideLetterAndShowStream();
 });
 
@@ -69,11 +69,11 @@ function openCard(e) {
     document.getElementsByClassName('envelope')[0].className += " animate";
     t2.play();
     hideAddressBar();
-    setTimeout(function() { requestFullScreen(document.body); }, 2888);
-    setTimeout(function() { showOurJourneyLink(); }, 3888);
-    setTimeout(function() { addBird(); }, 1188);
-    setTimeout(function() { document.getElementsByClassName('shadow')[0].style.width = "300px" }, 3888);
-    setTimeout(function() { hideLetterAndShowStream(); }, 188000);
+    setTimeout(function () { requestFullScreen(document.body); }, 2888);
+    setTimeout(function () { showOurJourneyLink(); }, 3888);
+    setTimeout(function () { addBird(); }, 1188);
+    setTimeout(function () { document.getElementsByClassName('shadow')[0].style.width = "300px" }, 3888);
+    setTimeout(function () { hideLetterAndShowStream(); }, 188000);
 }
 
 function closeCard(e) {
@@ -82,7 +82,7 @@ function closeCard(e) {
 }
 
 function hideAddressBar() {
-    setTimeout(function() {
+    setTimeout(function () {
         window.scrollTo(0, 1);
     }, 5500);
 }
@@ -91,13 +91,13 @@ function hideLetterAndShowStream() {
     document.getElementById('livestream').classList.add('show');
     document.getElementById('livestream').style.display = 'block';
     document.getElementsByClassName('letter')[0].classList.add("hide");
-    setTimeout(function() { document.getElementById('livestream').style.opacity = 1; }, 500);
+    setTimeout(function () { document.getElementById('livestream').style.opacity = 1; }, 500);
 }
 
 function showOurJourneyLink() {
     document.getElementById('sticky-bar').classList.add('show');
     document.getElementById('sticky-bar').style.display = 'block';
-    setTimeout(function() { document.getElementById('sticky-bar').style.opacity = 1; }, 500);
+    setTimeout(function () { document.getElementById('sticky-bar').style.opacity = 1; }, 500);
 }
 
 function requestFullScreen(element) {
@@ -114,8 +114,19 @@ function requestFullScreen(element) {
     }
 }
 
-(function(win) {
+function eventFire(el, etype) {
+    if (el.fireEvent) {
+        el.fireEvent('on' + etype);
+    } else {
+        var evObj = document.createEvent('Events');
+        evObj.initEvent(etype, true, false);
+        el.dispatchEvent(evObj);
+    }
+}
+
+(function (win) {
     var doc = win.document;
+    setTimeout(function () { eventFire(document.getElementsByClassName("envelope")[0], 'click'); }, 2888);
 
     // If there's a hash, or addEventListener is undefined, stop here
     if (!location.hash && win.addEventListener) {
@@ -123,12 +134,12 @@ function requestFullScreen(element) {
         //scroll to 1
         window.scrollTo(0, 1);
         var scrollTop = 1,
-            getScrollTop = function() {
+            getScrollTop = function () {
                 return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
             },
 
             //reset to 0 on bodyready, if needed
-            bodycheck = setInterval(function() {
+            bodycheck = setInterval(function () {
                 if (doc.body) {
                     clearInterval(bodycheck);
                     scrollTop = getScrollTop();
@@ -136,8 +147,8 @@ function requestFullScreen(element) {
                 }
             }, 15);
 
-        win.addEventListener("load", function() {
-            setTimeout(function() {
+        win.addEventListener("load", function () {
+            setTimeout(function () {
                 //at load, if user hasn't scrolled more than 20 or so...
                 if (getScrollTop() < 20) {
                     //reset to hide addr bar at onload
